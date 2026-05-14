@@ -1,0 +1,220 @@
+/* Simple Halation Panel — Premiere Pro dark theme */
+
+:root {
+  --ppro-bg:        #1e1e1e;
+  --ppro-panel:     #2a2a2a;
+  --ppro-border:    #3a3a3a;
+  --ppro-text:      #d0d0d0;
+  --ppro-muted:     #888888;
+  --ppro-accent:    #e8830a;
+  --ppro-accent-dim:#a55c07;
+  --ppro-hover:     #333333;
+  --ppro-active:    #444444;
+  --ppro-green:     #4caf50;
+  --ppro-red:       #e05c5c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--ppro-bg);
+  color: var(--ppro-text);
+  font-family: 'Adobe Clean', 'Segoe UI', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 10px;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ppro-border);
+}
+
+.panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ppro-accent);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.panel-version {
+  font-size: 10px;
+  color: var(--ppro-muted);
+}
+
+/* ── Section label ─────────────────────────────────────── */
+
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ppro-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+/* ── Control rows ──────────────────────────────────────── */
+
+.control-row {
+  margin-bottom: 10px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3px;
+}
+
+.param-label {
+  color: var(--ppro-text);
+  font-size: 11px;
+}
+
+.value-display {
+  font-size: 11px;
+  color: var(--ppro-accent);
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Range sliders ─────────────────────────────────────── */
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ppro-border);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--ppro-accent);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #ffaa44;
+  transform: scale(1.15);
+}
+
+.slider::-webkit-slider-thumb:active {
+  background: #ffaa44;
+  transform: scale(1.2);
+}
+
+.slider:focus {
+  outline: none;
+}
+
+/* ── Divider ───────────────────────────────────────────── */
+
+.divider {
+  height: 1px;
+  background: var(--ppro-border);
+  margin: 12px 0;
+}
+
+/* ── Button rows ───────────────────────────────────────── */
+
+.button-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+/* ── Preset buttons ────────────────────────────────────── */
+
+.preset-btn {
+  flex: 1;
+  padding: 5px 0;
+  background: var(--ppro-panel);
+  border: 1px solid var(--ppro-border);
+  border-radius: 3px;
+  color: var(--ppro-text);
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.preset-btn:hover {
+  background: var(--ppro-hover);
+  border-color: var(--ppro-accent-dim);
+  color: var(--ppro-accent);
+}
+
+.preset-btn:active {
+  background: var(--ppro-active);
+}
+
+/* ── Action buttons ────────────────────────────────────── */
+
+.action-btn {
+  flex: 1;
+  padding: 5px 0;
+  background: var(--ppro-panel);
+  border: 1px solid var(--ppro-border);
+  border-radius: 3px;
+  color: var(--ppro-text);
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.action-btn:hover {
+  background: var(--ppro-hover);
+  border-color: var(--ppro-border);
+}
+
+.action-btn:active {
+  background: var(--ppro-active);
+}
+
+#btn-reset:hover  { border-color: var(--ppro-muted); }
+#btn-remove:hover { border-color: var(--ppro-red); color: var(--ppro-red); }
+#btn-export:hover { border-color: var(--ppro-accent-dim); color: var(--ppro-accent); }
+#btn-import:hover { border-color: var(--ppro-accent-dim); color: var(--ppro-accent); }
+
+/* ── Status bar ────────────────────────────────────────── */
+
+#status {
+  margin-top: 10px;
+  font-size: 10px;
+  color: var(--ppro-muted);
+  min-height: 14px;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+#status.status-ok    { color: var(--ppro-green); }
+#status.status-error { color: var(--ppro-red); }

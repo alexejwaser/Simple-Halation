@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Halation</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="panel">
+
+    <div class="panel-header">
+      <span class="panel-title">Simple Halation</span>
+      <span class="panel-version">v1.0</span>
+    </div>
+
+    <!-- ── Threshold ── -->
+    <div class="control-row">
+      <div class="label-row">
+        <span class="param-label">Threshold</span>
+        <span class="value-display" id="val-threshold">200</span>
+      </div>
+      <input type="range" class="slider" id="slider-threshold"
+             data-param="threshold" min="0" max="255" step="1" value="200" />
+    </div>
+
+    <!-- ── Blur Radius ── -->
+    <div class="control-row">
+      <div class="label-row">
+        <span class="param-label">Blur Radius</span>
+        <span class="value-display" id="val-blurRadius">15</span>
+      </div>
+      <input type="range" class="slider" id="slider-blurRadius"
+             data-param="blurRadius" min="0" max="50" step="0.5" value="15" />
+    </div>
+
+    <!-- ── Color Temperature ── -->
+    <div class="control-row">
+      <div class="label-row">
+        <span class="param-label">Color Temperature</span>
+        <span class="value-display" id="val-colorTemp">60</span>
+      </div>
+      <input type="range" class="slider" id="slider-colorTemp"
+             data-param="colorTemp" min="0" max="100" step="1" value="60" />
+    </div>
+
+    <!-- ── Intensity ── -->
+    <div class="control-row">
+      <div class="label-row">
+        <span class="param-label">Intensity</span>
+        <span class="value-display" id="val-intensity">40%</span>
+      </div>
+      <input type="range" class="slider" id="slider-intensity"
+             data-param="intensity" min="0" max="100" step="1" value="40" />
+    </div>
+
+    <!-- ── Highlight Bias ── -->
+    <div class="control-row">
+      <div class="label-row">
+        <span class="param-label">Highlight Bias</span>
+        <span class="value-display" id="val-highlightBias">50</span>
+      </div>
+      <input type="range" class="slider" id="slider-highlightBias"
+             data-param="highlightBias" min="0" max="100" step="1" value="50" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Presets ── -->
+    <div class="section-label">Presets</div>
+    <div class="button-row">
+      <button class="preset-btn" id="btn-subtle">Subtle</button>
+      <button class="preset-btn" id="btn-medium">Medium</button>
+      <button class="preset-btn" id="btn-strong">Strong</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Actions ── -->
+    <div class="button-row">
+      <button class="action-btn" id="btn-reset">Reset</button>
+      <button class="action-btn" id="btn-remove">Remove</button>
+    </div>
+    <div class="button-row">
+      <button class="action-btn" id="btn-export">Export JSON</button>
+      <button class="action-btn" id="btn-import">Import JSON</button>
+    </div>
+
+    <div id="status"></div>
+
+  </div>
+
+  <script src="js/CSInterface.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
